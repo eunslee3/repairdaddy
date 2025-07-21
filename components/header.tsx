@@ -45,13 +45,13 @@ const Header: React.FC = () => {
 
           {/* Contact Info */}
           <div className="hidden md:flex items-center space-x-6">
-            <a href="tel:+13125551234" className="flex items-center text-gray-700 hover:text-blue-600">
+            {/* <a href="tel:+13125551234" className="flex items-center text-gray-700 hover:text-blue-600">
               <PhoneIcon className="w-5 h-5 mr-2" />
               <span>(312) 555-1234</span>
-            </a>
+            </a> */}
             <a href="mailto:info@repairdaddy.com" className="flex items-center text-gray-700 hover:text-blue-600">
               <MailIcon className="w-5 h-5 mr-2" />
-              <span>info@repairdaddy.com</span>
+              <span>bauhaus00@hotmail.com</span>
             </a>
           </div>
 
