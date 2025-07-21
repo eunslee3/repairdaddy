@@ -57,7 +57,7 @@ export default function ContactPage() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h2>
               <div className="space-y-6 mb-8">
-                <div className="flex items-start">
+                {/* <div className="flex items-start">
                   <div className="bg-blue-100 rounded-full p-3 mr-4">
                     <PhoneIcon className="w-6 h-6 text-blue-600" />
                   </div>
@@ -69,7 +69,7 @@ export default function ContactPage() {
                       </a>
                     </p>
                   </div>
-                </div>
+                </div> */}
                 <div className="flex items-start">
                   <div className="bg-blue-100 rounded-full p-3 mr-4">
                     <MailIcon className="w-6 h-6 text-blue-600" />

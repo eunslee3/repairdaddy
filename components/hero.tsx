@@ -34,13 +34,13 @@ const Hero: React.FC = () => {
           <p className="text-xl md:text-2xl font-medium mb-4">We provide quality and honesty</p>
           <p className="text-lg md:text-xl mb-8 opacity-90">Proudly serving the Chicagoland area and suburbs</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
+            {/* <a
               href="tel:+13125551234"
               className="inline-flex items-center justify-center bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300"
             >
               <PhoneIcon className="w-5 h-5 mr-2" />
               Call Now
-            </a>
+            </a> */}
             <Link
               href="/contact"
               className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300"

@@ -88,13 +88,14 @@ const Header: React.FC = () => {
                 Contact
               </Link>
               <div className="pt-4 border-t border-gray-200">
-                <a href="tel:+13125551234" className="flex items-center text-gray-700 hover:text-blue-600 mb-3">
+                {/* <a href="tel:+13125551234" className="flex items-center text-gray-700 hover:text-blue-600 mb-3">
                   <PhoneIcon className="w-5 h-5 mr-2" />
                   <span>(312) 555-1234</span>
-                </a>
+                </a> */}
                 <a href="mailto:info@repairdaddy.com" className="flex items-center text-gray-700 hover:text-blue-600">
                   <MailIcon className="w-5 h-5 mr-2" />
-                  <span>info@repairdaddy.com</span>
+                  {/* <span>info@repairdaddy.com</span> */}
+                  <span>bauhaus00@hotmail.com</span>
                 </a>
               </div>
             </div>

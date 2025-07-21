@@ -20,13 +20,13 @@ export default function ProductsPage() {
               Explore our selection of premium heating, cooling, and air quality products.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
+              {/* <a
                 href="tel:+13125551234"
                 className="inline-flex items-center justify-center bg-white text-gray-800 hover:bg-gray-100 font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300"
               >
                 <PhoneIcon className="w-5 h-5 mr-2" />
                 Call Now
-              </a>
+              </a> */}
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300"
