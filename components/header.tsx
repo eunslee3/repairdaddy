@@ -4,7 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
 import { PhoneIcon, MailIcon, MenuIcon, XIcon } from "lucide-react"
-
+import Image from "next/image"
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -18,7 +18,14 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-blue-600">Repair Daddy</span>
+            <Image
+              src="/logo.svg"
+              alt="Repair Daddy Logo"
+              width={40}
+              height={40}
+              priority
+            />
+            <span className="text-2xl font-bold text-[#5A2A1F]">Repair Daddy</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -49,9 +56,9 @@ const Header: React.FC = () => {
               <PhoneIcon className="w-5 h-5 mr-2" />
               <span>(312) 555-1234</span>
             </a> */}
-            <a href="mailto:info@repairdaddy.com" className="flex items-center text-gray-700 hover:text-blue-600">
+            <a href="mailto:repairdaddy74@gmail.com" className="flex items-center text-gray-700 hover:text-blue-600">
               <MailIcon className="w-5 h-5 mr-2" />
-              <span>bauhaus00@hotmail.com</span>
+              <span>repairdaddy74@gmail.com</span>
             </a>
           </div>
 

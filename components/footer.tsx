@@ -1,6 +1,6 @@
 import type React from "react"
 import Link from "next/link"
-import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon, FacebookIcon, InstagramIcon, TwitterIcon } from "lucide-react"
+import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon, FacebookIcon } from "lucide-react"
 
 const Footer: React.FC = () => {
   return (
@@ -15,14 +15,8 @@ const Footer: React.FC = () => {
               service.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-white">
+              <a href="https://www.facebook.com/profile.php?id=100088979646722" target="_blank" className="text-gray-300 hover:text-white">
                 <FacebookIcon className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-white">
-                <InstagramIcon className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-white">
-                <TwitterIcon className="w-5 h-5" />
               </a>
             </div>
           </div>

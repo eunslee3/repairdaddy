@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import { ReCaptchaProvider } from "next-recaptcha-v3"
 
 export const metadata: Metadata = {
   title: "v0 App",
@@ -18,9 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <ReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}>
+          <Header />
+          {children}
+          <Footer />
+        </ReCaptchaProvider>
       </body>
     </html>
   )

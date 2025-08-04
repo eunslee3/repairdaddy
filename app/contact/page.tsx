@@ -2,8 +2,9 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useCallback } from "react"
 import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon, CheckIcon } from "lucide-react"
+import { useReCaptcha } from "next-recaptcha-v3"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -15,6 +16,19 @@ export default function ContactPage() {
   })
   const [submitted, setSubmitted] = useState(false)
 
+  const {
+    /** Execute reCAPTCHA */
+    executeRecaptcha ,
+    /** reCAPTCHA_site_key */
+    reCaptchaKey,
+    /** Global ReCaptcha object */
+    grecaptcha,
+    /** Is ReCaptcha script loaded */
+    loaded,
+    /** Is ReCaptcha script failed to load */
+    error,
+  } = useReCaptcha();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({
@@ -23,8 +37,28 @@ export default function ContactPage() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault()
+
+    if (!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
+      console.error('reCAPTCHA site key is not configured');
+      return;
+    }
+
+    const token = await grecaptcha?.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, { action: "form_submit" })
+    debugger;
+
+    fetch("/api/contact", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({
+        token,
+        formData,
+      }),
+    })
+
     // In a real application, you would send the form data to a server here
     console.log(formData)
     setSubmitted(true)
@@ -35,7 +69,7 @@ export default function ContactPage() {
       service: "",
       message: "",
     })
-  }
+  }, [grecaptcha, formData])
 
   return (
     <div className="w-full">
@@ -57,19 +91,6 @@ export default function ContactPage() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h2>
               <div className="space-y-6 mb-8">
-                {/* <div className="flex items-start">
-                  <div className="bg-blue-100 rounded-full p-3 mr-4">
-                    <PhoneIcon className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-medium text-gray-900">Phone</h3>
-                    <p className="text-gray-600 mt-1">
-                      <a href="tel:+13125551234" className="hover:text-blue-600">
-                        (312) 555-1234
-                      </a>
-                    </p>
-                  </div>
-                </div> */}
                 <div className="flex items-start">
                   <div className="bg-blue-100 rounded-full p-3 mr-4">
                     <MailIcon className="w-6 h-6 text-blue-600" />
@@ -90,9 +111,9 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-medium text-gray-900">Address</h3>
                     <p className="text-gray-600 mt-1">
-                      123 HVAC Lane
+                      99 Manchester Dr
                       <br />
-                      Chicago, IL 60601
+                      Buffalo Grove, IL 60089
                     </p>
                   </div>
                 </div>
@@ -111,20 +132,6 @@ export default function ContactPage() {
                     </p>
                   </div>
                 </div>
-              </div>
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-100">
-                <h3 className="text-lg font-bold text-gray-900 mb-3">Emergency Service</h3>
-                <p className="text-gray-600 mb-4">
-                  24/7 emergency service is available for urgent HVAC issues. Call our emergency line for immediate
-                  assistance.
-                </p>
-                <a
-                  href="tel:+13125551234"
-                  className="inline-flex items-center justify-center bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
-                >
-                  <PhoneIcon className="w-5 h-5 mr-2" />
-                  Emergency Service
-                </a>
               </div>
             </div>
 
