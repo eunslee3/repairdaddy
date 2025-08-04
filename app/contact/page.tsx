@@ -46,7 +46,6 @@ export default function ContactPage() {
     }
 
     const token = await grecaptcha?.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, { action: "form_submit" })
-    debugger;
 
     fetch("/api/contact", {
       headers: {

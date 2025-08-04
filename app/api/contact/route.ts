@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
+import nodemailer from "nodemailer"
+import Anthropic from "@anthropic-ai/sdk"
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
@@ -24,6 +26,23 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid reCAPTCHA token" }, { status: 400 });
   }
   
-  
+  const { name, email, phone, message } = formData;
+
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+    secure: true,
+    port: Number(process.env.EMAIL_PORT),
+  });
+
+  const mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: process.env.EMAIL_TO,
+    subject: "New Contact Form Submission",
+    text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
+  };
   
 }
