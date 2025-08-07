@@ -7,7 +7,22 @@ import { ReCaptchaProvider } from "next-recaptcha-v3"
 
 export const metadata: Metadata = {
   title: "Repair Daddy",
-  description: "HVAC Repair and Service in Chicago",
+  description: 'High-efficiency HVAC systems with top brands like Carrier, Trane, and Mitsubishi. Expert installation and service you can trust.',
+  openGraph: {
+    title: 'Your Site Title - HVAC Experts',
+    description: 'High-efficiency HVAC systems with top brands like Carrier, Trane, and Mitsubishi.',
+    url: 'https://repairdaddyhvac.com',
+    siteName: 'Repair Daddy',
+    images: [
+      {
+        url: 'https://repairdaddy.com/hero-img.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Repair Daddy',
+      },
+    ],
+    type: 'website',
+  },
   generator: "v0.dev",
   icons: {
     icon: "/logo.svg",
