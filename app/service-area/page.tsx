@@ -47,13 +47,6 @@ export default function ServiceAreaPage() {
               Reliable HVAC services throughout Chicagoland and surrounding communities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="tel:+13125551234"
-                className="inline-flex items-center justify-center bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300"
-              >
-                <PhoneIcon className="w-5 h-5 mr-2" />
-                Call Now
-              </a>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300"
@@ -142,13 +135,6 @@ export default function ServiceAreaPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Need HVAC Service in Your Area?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">Contact Repair Daddy today for prompt, professional service.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="tel:+13125551234"
-              className="inline-flex items-center justify-center bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300"
-            >
-              <PhoneIcon className="w-5 h-5 mr-2" />
-              Call Now
-            </a>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300"
