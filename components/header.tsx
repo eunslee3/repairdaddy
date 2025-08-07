@@ -29,7 +29,7 @@ const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
             <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium">
               Home
             </Link>
@@ -51,26 +51,26 @@ const Header: React.FC = () => {
           </nav>
 
           {/* Contact Info */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-4">
             {/* <a href="tel:+13125551234" className="flex items-center text-gray-700 hover:text-blue-600">
               <PhoneIcon className="w-5 h-5 mr-2" />
               <span>(312) 555-1234</span>
             </a> */}
             <a href="mailto:repairdaddy74@gmail.com" className="flex items-center text-gray-700 hover:text-blue-600">
               <MailIcon className="w-5 h-5 mr-2" />
-              <span>repairdaddy74@gmail.com</span>
+              <span>repairdaddy.hvac@gmail.com</span>
             </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-gray-700 focus:outline-none" onClick={toggleMenu}>
+          <button className="lg:hidden text-gray-700 focus:outline-none" onClick={toggleMenu}>
             {isMenuOpen ? <XIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4">
+          <nav className="lg:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
               <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium" onClick={toggleMenu}>
                 Home

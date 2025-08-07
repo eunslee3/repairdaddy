@@ -27,6 +27,21 @@ export async function POST(req: NextRequest) {
   }
   
   const { name, email, phone, message } = formData;
+  const anthropic = new Anthropic({
+    apiKey: process.env.ANTHROPIC_API_KEY,
+  });
+
+  const response = await anthropic.messages.create({
+    model: "claude-3-5-haiku-20241022",
+    messages: [
+      { role: "user", content: `Translate the following English text to natural Korean, keeping nuance and professional tone. Output ONLY the translated text:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}` }
+    ],
+    max_tokens: 1000,
+  });
+
+  const translatedText = response.content[0].type === 'text' ? response.content[0].text : '';
+
+  console.log('translatedText: ', translatedText)
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -34,15 +49,16 @@ export async function POST(req: NextRequest) {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
     },
-    secure: true,
-    port: Number(process.env.EMAIL_PORT),
   });
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: process.env.EMAIL_TO,
     subject: "New Contact Form Submission",
-    text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
+    text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}\n번역된 메시지: ${translatedText}`,
   };
   
+  await transporter.sendMail(mailOptions);
+
+  return NextResponse.json({ message: "Email sent successfully" }, { status: 200 });
 }

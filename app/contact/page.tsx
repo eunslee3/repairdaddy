@@ -98,7 +98,7 @@ export default function ContactPage() {
                     <h3 className="text-lg font-medium text-gray-900">Email</h3>
                     <p className="text-gray-600 mt-1">
                       <a href="mailto:info@repairdaddy.com" className="hover:text-blue-600">
-                        info@repairdaddy.com
+                        repairdaddy.hvac@gmail.com
                       </a>
                     </p>
                   </div>

@@ -136,14 +136,31 @@ export default function AirConditioningPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Brands We Service</h2>
             <p className="text-lg text-gray-600">We work with all major air conditioning brands and models.</p>
           </div>
-          <div className="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
-            {["Carrier", "Trane", "Lennox", "Rheem", "American Standard", "Bryant", "Goodman", "York"].map((brand) => (
-              <div key={brand} className="text-center">
-                <div className="bg-gray-100 rounded-full w-24 h-24 flex items-center justify-center mb-3 mx-auto">
-                  <span className="text-gray-500 font-medium">{brand}</span>
-                </div>
-              </div>
-            ))}
+          <div className="overflow-hidden max-w-screen-lg mx-auto">
+            <div className="flex w-max animate-scroll gap-8">
+              {Array(2)
+                .fill(null)
+                .flatMap((_, i) =>
+                  [
+                    "Carrier",
+                    "Trane",
+                    "Lennox",
+                    "Rheem",
+                    "American Standard",
+                    "Bryant",
+                    "Goodman",
+                    "York",
+                  ].map((brand, idx) => (
+                    <div key={`${brand}-${i}`} className="w-24 h-24 flex items-center justify-center mb-3 mx-auto">
+                      <img
+                        src={`/brands/${brand.toLowerCase().replace(/ /g, "-")}.svg`}
+                        alt={`${brand} logo`}
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    </div>
+                  )),
+                )}
+            </div>
           </div>
         </div>
       </section>

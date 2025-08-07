@@ -111,13 +111,13 @@ const Footer: React.FC = () => {
                 <MailIcon className="w-5 h-5 mr-3 mt-1 text-blue-400" />
                 <span>
                   <a href="mailto:info@repairdaddy.com" className="text-gray-300 hover:text-white">
-                    info@repairdaddy.com
+                    repairdaddy.hvac@gmail.com
                   </a>
                 </span>
               </li>
               <li className="flex items-start">
                 <MapPinIcon className="w-5 h-5 mr-3 mt-1 text-blue-400" />
-                <span className="text-gray-300">123 HVAC Lane, Chicago, IL 60601</span>
+                <span className="text-gray-300">99 Manchester Dr, Buffalo Grove, IL 60089</span>
               </li>
               <li className="flex items-start">
                 <ClockIcon className="w-5 h-5 mr-3 mt-1 text-blue-400" />
