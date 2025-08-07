@@ -86,21 +86,29 @@ export default function ProductsPage() {
                     title: "Central Air Conditioners",
                     description: "High-efficiency central AC systems for whole-home cooling.",
                     brands: ["Carrier", "Trane", "Lennox", "Rheem"],
+                    image: "/products/central-air-condition.png", // check spelling if needed
                   },
                   {
                     title: "Ductless Mini-Split Systems",
                     description: "Perfect for homes without ductwork or for room additions.",
                     brands: ["Mitsubishi", "Daikin", "Fujitsu", "LG"],
+                    image: "/products/ductless-mini-split-systems.jpg",
                   },
                   {
                     title: "Heat Pumps",
                     description: "Year-round comfort with both heating and cooling capabilities.",
                     brands: ["Carrier", "Trane", "Bryant", "Goodman"],
+                    image: "/products/heat-pumps.webp",
                   },
                 ].map((product) => (
                   <div key={product.title} className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
-                    <div className="flex items-center justify-center h-20 w-20 bg-blue-100 rounded-full mb-6 mx-auto">
-                      <ThermometerIcon className="h-10 w-10 text-blue-600" />
+                    <div className="flex items-center justify-center h-20 w-20 bg-blue-100 rounded-full mb-6 mx-auto overflow-hidden">
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        className="object-contain h-full w-full"
+                        loading="lazy"
+                      />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">{product.title}</h3>
                     <p className="text-gray-600 mb-4 text-center">{product.description}</p>
@@ -135,21 +143,29 @@ export default function ProductsPage() {
                     title: "Gas Furnaces",
                     description: "High-efficiency gas furnaces for reliable winter heating.",
                     brands: ["Carrier", "Trane", "Lennox", "Bryant"],
+                    image: "/products/gas-furnace.png",
                   },
                   {
                     title: "Boilers",
                     description: "Hot water and steam boilers for radiator and in-floor heating.",
                     brands: ["Weil-McLain", "Burnham", "Slant/Fin", "Navien"],
+                    image: "/products/boilers.png",
                   },
                   {
                     title: "Electric Heating",
                     description: "Electric furnaces and baseboard heaters for homes without gas.",
                     brands: ["Carrier", "Coleman", "Rheem", "Goodman"],
+                    image: "/products/electric-heater.webp",
                   },
                 ].map((product) => (
                   <div key={product.title} className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
-                    <div className="flex items-center justify-center h-20 w-20 bg-orange-100 rounded-full mb-6 mx-auto">
-                      <FlameIcon className="h-10 w-10 text-orange-600" />
+                    <div className="flex items-center justify-center h-20 w-20 bg-blue-100 rounded-full mb-6 mx-auto overflow-hidden">
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        className="object-contain h-full w-full"
+                        loading="lazy"
+                      />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">{product.title}</h3>
                     <p className="text-gray-600 mb-4 text-center">{product.description}</p>
@@ -182,21 +198,29 @@ export default function ProductsPage() {
                     title: "Air Purifiers",
                     description: "Whole-home air purification systems that remove airborne contaminants.",
                     brands: ["Carrier", "Trane", "Aprilaire", "Honeywell"],
+                    image: "/products/air-purifier.webp",
                   },
                   {
                     title: "Humidifiers & Dehumidifiers",
                     description: "Maintain optimal humidity levels for comfort and health.",
                     brands: ["Aprilaire", "Honeywell", "GeneralAire", "Carrier"],
+                    image: "/products/humidifier.jpg",
                   },
                   {
                     title: "Ventilation Systems",
                     description: "Fresh air exchange systems to improve indoor air quality.",
                     brands: ["Panasonic", "Broan", "Fantech", "RenewAire"],
+                    image: "/products/ventilation-systems.jpg",
                   },
                 ].map((product) => (
                   <div key={product.title} className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
-                    <div className="flex items-center justify-center h-20 w-20 bg-green-100 rounded-full mb-6 mx-auto">
-                      <DropletIcon className="h-10 w-10 text-green-600" />
+                    <div className="flex items-center justify-center h-20 w-20 bg-blue-100 rounded-full mb-6 mx-auto overflow-hidden">
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        className="object-contain h-full w-full"
+                        loading="lazy"
+                      />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">{product.title}</h3>
                     <p className="text-gray-600 mb-4 text-center">{product.description}</p>
