@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { PhoneIcon, ThermometerIcon, FlameIcon, DropletIcon, CheckIcon } from "lucide-react"
+import { CheckIcon } from "lucide-react"
 
 export default function ProductsPage() {
   const [activeTab, setActiveTab] = useState("ac")
@@ -20,13 +20,6 @@ export default function ProductsPage() {
               Explore our selection of premium heating, cooling, and air quality products.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              {/* <a
-                href="tel:+13125551234"
-                className="inline-flex items-center justify-center bg-white text-gray-800 hover:bg-gray-100 font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300"
-              >
-                <PhoneIcon className="w-5 h-5 mr-2" />
-                Call Now
-              </a> */}
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300"
@@ -298,13 +291,6 @@ export default function ProductsPage() {
             Contact Repair Daddy today for expert advice and a free quote.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="tel:+13125551234"
-              className="inline-flex items-center justify-center bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300"
-            >
-              <PhoneIcon className="w-5 h-5 mr-2" />
-              Call Now
-            </a>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300"

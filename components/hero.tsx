@@ -1,7 +1,5 @@
 import type React from "react"
 import Link from "next/link"
-import Image from "next/image"
-import { PhoneIcon } from "lucide-react"
 
 const Hero: React.FC = () => {
   return (
