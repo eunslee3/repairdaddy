@@ -6,9 +6,12 @@ import Footer from "@/components/footer"
 import { ReCaptchaProvider } from "next-recaptcha-v3"
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
+  title: "Repair Daddy",
+  description: "HVAC Repair and Service in Chicago",
   generator: "v0.dev",
+  icons: {
+    icon: "/logo.svg",
+  },
 }
 
 export default function RootLayout({
