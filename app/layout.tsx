@@ -23,7 +23,6 @@ export const metadata: Metadata = {
     ],
     type: 'website',
   },
-  generator: "v0.dev",
   icons: {
     icon: "/logo.svg",
   },
