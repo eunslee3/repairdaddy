@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
                 <PhoneIcon className="w-5 h-5 mr-3 mt-1 text-blue-400" />
                 <span>
                   <a href="tel:+13125551234" className="text-gray-300 hover:text-white">
-                    (312) 555-1234
+                    (773) 814-2661
                   </a>
                 </span>
               </li>

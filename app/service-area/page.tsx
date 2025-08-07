@@ -57,7 +57,6 @@ export default function ServiceAreaPage() {
           </div>
         </div>
       </section>
-
       {/* Service Areas Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -77,12 +76,11 @@ export default function ServiceAreaPage() {
           </div>
           <div className="max-w-3xl mx-auto text-center mt-8">
             <p className="text-gray-600 italic">
-              {"Don't see your city listed? Call us at (312) 555-1234 — we may still cover your area!"}
+              {"Don't see your city listed? Call us at (773) 814-2661 — we may still cover your area!"}
             </p>
           </div>
         </div>
       </section>
-
       {/* Trust Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -128,7 +126,6 @@ export default function ServiceAreaPage() {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-16 bg-blue-600 text-white">
         <div className="container mx-auto px-4 text-center">
